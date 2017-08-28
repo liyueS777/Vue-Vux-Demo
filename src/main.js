@@ -20,7 +20,8 @@ const router = new VueRouter({
 })
 
 FastClick.attach(document.body)
-
+//为了 解决 移动端 当滑动目标元素 时 阻止 父元素 触发滚动事件；但有时候不是很灵验
+window.addEventListener('touchmove', e => e.preventDefault())
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
